@@ -175,11 +175,11 @@ def normalize_names(contributors):
     return contributors
 
 
-def find_citation_file(filename='zenodo.json'):
+def find_citation_file(filename='zenodo-main.json'):
     # careful! This function makes quite specific folder structure assumptions!
     file_loc = pathlib.Path(__file__).absolute()
     file_loc = file_loc.parent
-    citation_file = next(file_loc.glob(f'../{filename}'))
+    citation_file = next(file_loc.glob(f'{filename}'))
     return citation_file.resolve()
 
 
